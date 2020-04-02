@@ -78,6 +78,8 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpPost]
         public IActionResult Delete(Incident incident)
         {
+            context.Incidents.Remove(incident);
+            context.SaveChanges();
             return RedirectToAction("List");
         }
 
@@ -108,7 +110,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             }
             else
             {
-                ViewBag.Coutries = context.Countries.ToList();
+                
                 return View("AddEdit", incident);
             }
 

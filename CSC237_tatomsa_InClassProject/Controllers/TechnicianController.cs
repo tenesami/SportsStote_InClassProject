@@ -82,8 +82,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
                 return RedirectToAction("List");
             }
             else
-            {
-                ViewBag.Coutries = context.Countries.ToList();
+            {               
                 return View("AddEdit", tech);
             }
 

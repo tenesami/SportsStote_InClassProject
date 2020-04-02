@@ -3,6 +3,10 @@
     string title = ViewBag.Action + " Customer";
     ViewBag.Title = title;
 }
+@section scripts{
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+}
 
 <h1>@ViewBag.Title</h1>
 
@@ -48,12 +52,12 @@
     <div class="row form-group">
         <label asp-for="CountryID" class="col-sm-3">Country</label>
         <div class="col">
-            <select asp-for="CountryID" class="form-control">
+            <select asp-for="CountryID"
+                    asp-items="@(new SelectList(ViewBag.Countries,
+                        "CountryID", "Name", Model.CountryID
+                    ))"
+                    class="form-control">
                 <option value="">Select a country...</option>
-                @foreach (Country c in ViewBag.Countries)
-                {
-                    <option value="@c.CountryID">@c.Name</option>
-                }
             </select>
         </div>
     </div>

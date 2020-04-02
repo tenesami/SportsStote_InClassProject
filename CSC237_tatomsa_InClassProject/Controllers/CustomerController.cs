@@ -20,7 +20,6 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [Route("customers")]
         public IActionResult List()
         {
-            //buid query expression 
             List<Customer> customers = context.Customers
                 .OrderBy(c => c.LastName).ToList();
             return View(customers);
@@ -43,14 +42,15 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 
             ViewBag.Countries = context.Countries.ToList();
 
-            var customer = context.Customers.Find(id); //use customer add to the delete
-            return View("AddEdit");
+            var customer = context.Customers.Find(id);
+            return View("AddEdit", customer);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
             var customer = context.Customers.Find(id);
+
             return View(customer);
         }
 
@@ -61,6 +61,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             context.SaveChanges();
             return RedirectToAction("List");
         }
+
         [HttpPost]
         public IActionResult Save(Customer customer)
         {
@@ -88,11 +89,9 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             }
             else
             {
-                ViewBag.Coutries = context.Countries.ToList();
+                ViewBag.Countries = context.Countries.ToList();
                 return View("AddEdit", customer);
             }
-
         }
-
     }
 }
