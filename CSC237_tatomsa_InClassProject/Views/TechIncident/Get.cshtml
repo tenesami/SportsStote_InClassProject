@@ -1,0 +1,18 @@
+﻿@model Technician
+@{ 
+    ViewBag.Title = "Get Technician";
+
+ }
+<!--Create the drop down form to the technician-->
+<h1>Technician</h1>
+<!--go to IAction technicial list-->
+<form asp-action="List" method="post">
+    <select asp-for="TechnicianID" class="form-control">
+        <option value="0">Select a technician...</option>
+        @foreach (Technician t in ViewBag.Technicians)
+        {
+            <option value="@t.TechnicianID">@t.Name</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-primary mt-2">Select</button>
+</form>

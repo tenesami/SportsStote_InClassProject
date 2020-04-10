@@ -26,8 +26,15 @@ using CSC237_tatomsa_InClassProject.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\Views\_ViewImports.cshtml"
+using CSC237_tatomsa_InClassProject.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae24d30bfdb316a443e5e56509c8bcdacd756140", @"/Views/Technician/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"baa68f3e73a24e3fa0b9ca633df3fe20a254ac06", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b5ff2f5a23a8a2211079c56603a87b70eff5fd9", @"/Views/_ViewImports.cshtml")]
     public class Views_Technician_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Technician>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -122,7 +129,7 @@ Write(ViewBag.Title);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd7561407078", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd7561407346", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -154,7 +161,7 @@ Write(ViewBag.Title);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd7561409441", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd7561409709", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -194,7 +201,7 @@ Write(ViewBag.Title);
 #line hidden
 #nullable disable
             WriteLiteral("    </tbody>\r\n</table>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd75614012080", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae24d30bfdb316a443e5e56509c8bcdacd75614012348", async() => {
                 WriteLiteral("Add Technician");
             }
             );

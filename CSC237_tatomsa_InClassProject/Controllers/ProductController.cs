@@ -18,7 +18,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
 
         [Route("products")]
-        public IActionResult List()
+        public ViewResult List()
         {
             ViewBag.Title = "Product List";
             List<Product> productList = context.Products.ToList();
@@ -27,14 +27,14 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public ViewResult Add()
         {
             ViewBag.Action = "Add";
             return View("AddEdit", new Product());
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public ViewResult Edit(int id)
         {
             ViewBag.Action = "Edit";
             var product = context.Products.Find(id);
@@ -42,14 +42,14 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public ViewResult Delete(int id)
         {
             var product = context.Products.Find(id);
             return View(product);
         }
 
         [HttpPost]
-        public IActionResult Delete(Product product)
+        public RedirectToActionResult Delete(Product product)
         {
             context.Products.Remove(product);
             context.SaveChanges();
@@ -60,6 +60,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpPost]
         public IActionResult Save(Product product)
         {
+            string message;
             if (product.ProductID == 0)
             {
                 ViewBag.Action = "Add";
@@ -73,13 +74,16 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             {
                 if (ViewBag.Action == "Add")
                 {
+                    message = product.Name + " was added.";
                     context.Products.Add(product);
                 }
                 else
                 {
+                    message = product.Name + " was updated.";
                     context.Products.Update(product);
                 }
                 context.SaveChanges();
+                TempData["message"] = message;
                 return RedirectToAction("List");
             }
             else
