@@ -4,14 +4,16 @@ using CSC237_tatomsa_InClassProject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CSC237_tatomsa_InClassProject.Migrations
 {
     [DbContext(typeof(SportsProContext))]
-    partial class SportsProContextModelSnapshot : ModelSnapshot
+    [Migration("20200410175912_registrationAdded")]
+    partial class registrationAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -80,3 +80,5 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\TechIncident\Edit.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\TechIncident\Get.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\TechIncident\List.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Registration\GetCustomer.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Registration\List.cshtml.g.cs

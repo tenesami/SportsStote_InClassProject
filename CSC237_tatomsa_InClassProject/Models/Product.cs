@@ -22,5 +22,10 @@ namespace CSC237_tatomsa_InClassProject.Models
         public decimal YearlyPrice { get; set; }
 
         public DateTime ReleaseDate { get; set; }
+
+        //Navigation Property linking entity I.e I Collection allow us to add end edit but IEnumerable is not
+        public ICollection<Registration> Registrations { get; set; }
+
+
     }
 }

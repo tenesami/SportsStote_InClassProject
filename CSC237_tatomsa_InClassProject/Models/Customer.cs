@@ -52,5 +52,9 @@ namespace CSC237_tatomsa_InClassProject.Models
 
         // Read only property
         public string FullName => FirstName + " " + LastName;
+
+        //Navigation Property linking entity I.e I Collection allow us to add end edit but IEnumerable is not
+        public ICollection<Registration> Registrations { get; set; }
+
     }
 }

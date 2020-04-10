@@ -17,6 +17,7 @@ namespace CSC237_tatomsa_InClassProject.Models
         public DbSet<Country> Countries { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Incident> Incidents { get; set; }
+        public DbSet<Registration> Registrations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) //compasit key Entitiyframe work core //composite key in entity framework core                                                                          
         {                                                                   //to tell the primery key
@@ -301,6 +302,45 @@ namespace CSC237_tatomsa_InClassProject.Models
                 }
 
                 );
+            /*
+             Many-to-many relationship for registration table
+             */
+
+            //Compasite primery key 
+            modelBuilder.Entity<Registration>()
+                .HasKey(r => new { r.CustomerID, r.ProductID });
+
+            //One to many relationship b/n customer and registration
+            modelBuilder.Entity<Registration>()
+                .HasOne(r => r.Customer)
+                .WithMany(c => c.Registrations)
+                .HasForeignKey(r => r.CustomerID);
+
+            //One to many relationship b/n Product and registration
+            modelBuilder.Entity<Registration>()
+                .HasOne(r => r.Product)
+                .WithMany(c => c.Registrations)
+                .HasForeignKey(r => r.ProductID);
+
+            modelBuilder.Entity<Registration>().HasData(
+                new Registration
+                {
+                    CustomerID = 1002,
+                    ProductID = 1
+                },
+                new Registration
+                {
+                    CustomerID = 1002,
+                    ProductID = 3
+                },
+                new Registration
+                { 
+                    CustomerID = 1010,
+                    ProductID = 2
+                }
+
+                );
+
         }
     }
 }
