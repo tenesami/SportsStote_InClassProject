@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using CSC237_tatomsa_InClassProject.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -14,23 +11,30 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class RegistrationController : Controller
     {
-        private SportsProContext context{ get; set; }
+        private SportsProUnit data { get; set; }
         
-        public RegistrationController(SportsProContext ctx) => context = ctx;
+        public RegistrationController(SportsProContext ctx)
+        {
+            data = new SportsProUnit(ctx);
+        }
 
         public IActionResult GetCustomer()
         {
-            ViewBag.Customers = context.Customers
-                .OrderBy(c => c.LastName)
-                .ToList();
-
-            int? custID = HttpContext.Session.GetInt32("custID");
+            ViewBag.Customers = data.Customers.List(new QueryOptions<Customer>
+            { 
+                OrderBy = c => c.LastName
+            });
+              
+            int custID = HttpContext.Session.GetInt32("custID") ?? 0;
             Customer customer;
-            if (custID == null || custID == 0)
+            if (custID == 0)
+            {
                 customer = new Customer();
+            }
             else
-                customer = context.Customers.Find(custID);
-                       
+            {
+                customer = data.Customers.Get(custID);
+            }                      
             return View(customer);
         }
         
@@ -54,15 +58,17 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             RegistrationViewModel model = new RegistrationViewModel
             { 
               CustomerID = id,
-              Customer = context.Customers.Find(id),
-              Products = context.Products
-              .OrderBy(p => p.Name)
-              .ToList(),
-              Registrations = context.Registrations
-              .Include(r => r.Customer)
-              .Include(r => r.Product)
-              .Where(r => r.CustomerID == id)
-              .ToList()
+              Customer = data.Customers.Get(id),
+              Products = data.Products.List(new QueryOptions<Product>
+              {
+                  OrderBy = p => p.Name
+              }),
+
+                Registrations = data.Registrations.List(new QueryOptions<Registration>
+                {
+                    Includes = "Customer, Product",
+                    Where = r => r.CustomerID == id
+                })            
             };
 
             return View(model);
@@ -76,11 +82,16 @@ namespace CSC237_tatomsa_InClassProject.Controllers
                 CustomerID = customerID, 
                ProductID = productID
             };
-            context.Registrations.Remove(registration);
-            context.SaveChanges();
+            data.Registrations.Delete(registration);
+            data.Save();
            return RedirectToAction("List", new { ID = customerID });           
         }
 
+        [HttpPost]
+        public IActionResult Filter(int customerID = 0)
+        {
+            return RedirectToAction("List", new { ID = customerID });
+        }
 
         [HttpPost]
         public IActionResult Register(RegistrationViewModel model)
@@ -96,10 +107,10 @@ namespace CSC237_tatomsa_InClassProject.Controllers
                     CustomerID = model.CustomerID,
                     ProductID = model.ProductID
                 };
-                context.Registrations.Add(registration);
+               data.Registrations.Insert(registration);
                 try
                 {
-                    context.SaveChanges();
+                    data.Save();
                 }
                 catch(DbUpdateException ex)
                 {

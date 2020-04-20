@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,19 +12,23 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class ProductController : Controller
     {
-        private SportsProContext context;
+        private Repository<Product> data { get; set; }
         public ProductController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new Repository<Product>(ctx);
         }
 
         [Route("products")]
         public ViewResult List()
         {
             ViewBag.Title = "Product List";
-            List<Product> productList = context.Products.ToList();
 
-            return View(productList);
+            var products = this.data.List(new QueryOptions<Product>
+            { 
+                OrderBy = p => p.ReleaseDate
+            });
+
+            return View(products);
         }
 
         [HttpGet]
@@ -37,22 +42,22 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         public ViewResult Edit(int id)
         {
             ViewBag.Action = "Edit";
-            var product = context.Products.Find(id);
+            var product = data.Get(id);
             return View("AddEdit", product);
         }
 
         [HttpGet]
         public ViewResult Delete(int id)
         {
-            var product = context.Products.Find(id);
+            var product = data.Get(id);
             return View(product);
         }
 
         [HttpPost]
         public RedirectToActionResult Delete(Product product)
         {
-            context.Products.Remove(product);
-            context.SaveChanges();
+            data.Delete(product);
+            data.Save();
 
             return RedirectToAction("List");
         }
@@ -61,36 +66,35 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         public IActionResult Save(Product product)
         {
             string message;
-            if (product.ProductID == 0)
-            {
-                ViewBag.Action = "Add";
-            }
-            else
-            {
-                ViewBag.Action = "Edit";
-            }
-
             if (ModelState.IsValid)
             {
-                if (ViewBag.Action == "Add")
+                if (product.ProductID == 0)
                 {
+                    data.Insert(product);
                     message = product.Name + " was added.";
-                    context.Products.Add(product);
                 }
                 else
                 {
-                    message = product.Name + " was updated.";
-                    context.Products.Update(product);
+                    data.Update(product);
+                    message = product.Name + "was updated.";
                 }
-                context.SaveChanges();
+                data.Save();
                 TempData["message"] = message;
                 return RedirectToAction("List");
             }
             else
             {
-                return View("AddEdit", product);
+                if (product.ProductID == 0)
+                {
+                    ViewBag.Action = "Add";
+                }
+                else
+                {
+                    ViewBag.Action = "Edit";
+                }
+                return View(product);
             }
-
+            
         }
 
     }

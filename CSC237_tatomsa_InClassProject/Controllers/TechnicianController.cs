@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,18 +12,20 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class TechnicianController : Controller
     {
-        private SportsProContext context;
+        private Repository<Technician> data { get; set; }
 
         public TechnicianController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new Repository<Technician>(ctx);
         }
 
         [Route("techicians")]
         public IActionResult List()
         {
-            List<Technician> techs = context.Technicians
-                .OrderBy(t => t.Name).ToList();
+            var techs = this.data.List(new QueryOptions<Technician>
+            {
+                OrderBy = t => t.Name
+            });                         
             return View(techs);
         }
 
@@ -37,53 +40,52 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
-            var tech = context.Technicians.Find(id);
+            var tech = data.Get(id);
             return View("AddEdit", tech);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var tech = context.Technicians.Find(id);
+            var tech = data.Get(id);
             return View(tech);
         }
 
         [HttpPost]
         public IActionResult Delete(Technician tech)
         {
-            context.Technicians.Remove(tech);
-            context.SaveChanges();
+            data.Delete(tech);
+            data.Save();
             return RedirectToAction("List");
         }
 
         [HttpPost]
         public IActionResult Save(Technician tech)
         {
-            if (tech.TechnicianID == 0)
-            {
-                ViewBag.Action = "Add";
-            }
-            else
-            {
-                ViewBag.Action = "Edit";
-            }
-
             if (ModelState.IsValid)
             {
-                if (ViewBag.Action == "Add")
+               if(tech.TechnicianID == 0)
                 {
-                    context.Technicians.Add(tech);
+                    data.Insert(tech);
                 }
                 else
                 {
-                    context.Technicians.Update(tech);
+                    data.Update(tech);
                 }
-                context.SaveChanges();
+                data.Save();
                 return RedirectToAction("List");
             }
             else
-            {               
-                return View("AddEdit", tech);
+            {
+                if (tech.TechnicianID == 0)
+                {
+                    ViewBag.Action = "Add";
+                }
+                else
+                {
+                    ViewBag.Action = "Edit";
+                }
+                return View(tech);
             }
 
         }
