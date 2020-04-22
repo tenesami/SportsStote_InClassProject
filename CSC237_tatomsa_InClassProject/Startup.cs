@@ -1,3 +1,4 @@
+using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,15 @@ namespace CSC237_tatomsa_InClassProject
 
             services.AddDbContext<SportsProContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SportsPro")));
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;
+                options.AppendTrailingSlash = true;
+            });
+
+            services.AddTransient<ISportsProUnit, SportsProUnit>();
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

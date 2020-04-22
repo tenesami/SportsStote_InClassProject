@@ -1,4 +1,5 @@
-﻿using CSC237_tatomsa_InClassProject.Models;
+﻿using CSC237_tatomsa_InClassProject.DataLayer;
+using CSC237_tatomsa_InClassProject.Models;
 using CSC237_tatomsa_InClassProject.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,35 +13,31 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class TechIncidentController : Controller            
     {
-        private SportsProContext context { get; set; }
+        private SportsProUnit data { get; set; }
         
         public TechIncidentController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new SportsProUnit(ctx);
         }
         [HttpGet]
-        public IActionResult Get() //Desplay the list of technicians used for drop down
-            //& save it to viewBag.Technician
+        public IActionResult Get() 
         {
-            ViewBag.Technicians = context.Technicians
-                 .OrderBy(c => c.Name)
-                 .ToList();
+            ViewBag.Technicians = data.Technicians.List(new QueryOptions<Technician>
+            {
+                OrderBy = c => c.Name
+            });
 
-            //Check when the page is obtaind if there is a technican ID has passed
-            //into z session object and grap the techID if it is not one their we will
-            //have it as null because int? is nulluble type  
-            int? techID = HttpContext.Session.GetInt32("techID");
+            int techID = HttpContext.Session.GetInt32("techID") ?? 0;
             Technician technician; //create empty technician
 
-            if (techID == null)
+            if (techID == 0)
             { //if it is null we intanciate new technician
                 technician = new Technician();
             }
             else
             {//go to Db context and grap from technicianId and grap z frist and default one.
-                technician = context.Technicians
-                    .Where(t => t.TechnicianID == techID)
-                    .FirstOrDefault();
+                technician = data.Technicians.Get(techID);
+                    
             }
             return View(technician);
         }
@@ -68,14 +65,19 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         {
             var model = new TechIncidentViewModel
             {
-                Technician = context.Technicians.Find(id),
-                Incidents = context.Incidents
-                    .Include(i => i.Customer)
-                    .Include(i => i.Product)
-                    .OrderBy(i => i.DateOpened)
-                    .Where(i => i.TechnicianID == id)
-                    .Where(i => i.DateClosed == null)
-                    .ToList()
+                Technician = data.Technicians.Get(id),
+                Incidents = data.Incidents.List(new QueryOptions<Incident>
+                {
+                    Includes = "Customer, Product",
+                    OrderBy = i => i.DateOpened,
+                    WhereClauses = new WhereClauses<Incident>
+                    {
+                        {i => i.TechnicianID == id },
+                        {i => i.DateClosed  == null }
+                    }
+                })
+
+
             };
             return View(model);
         }
@@ -83,27 +85,30 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            int? techID = HttpContext.Session.GetInt32("techID"); //check and get the tech id 
+            int techID = HttpContext.Session.GetInt32("techID") ?? 0; //check and get the tech id 
             var model = new TechIncidentViewModel
             {
-                Technician = context.Technicians.Find(techID),
+                Technician = data.Technicians.Get(techID),
 
-                Incident = context.Incidents
-                    .Include(i => i.Customer)
-                    .Include(i => i.Product)
-                    .FirstOrDefault(i => i.IncidentID == id)
+                Incident = data.Incidents.Get(new QueryOptions<Incident>
+                {
+                    Includes = "Customer, Product",
+                    Where = i => i.IncidentID == id
+                })
             };
+
             return View(model);
         }
+
         [HttpPost]
         public IActionResult Edit(IncidentViewModel model)
         {
-            Incident i = context.Incidents.Find(model.Incident.IncidentID);
+            Incident i = data.Incidents.Get(model.Incident.IncidentID);
             i.Description = model.Incident.Description;
             i.DateClosed = model.Incident.DateClosed;
 
-            context.Incidents.Update(i);
-            context.SaveChanges();
+            data.Incidents.Update(i);
+            data.Save();
 
             int? techID = HttpContext.Session.GetInt32("techID");
             return RedirectToAction("List", new { id = techID });

@@ -31,25 +31,6 @@ namespace CSC237_tatomsa_InClassProject.Configurations
                 .WithMany(c => c.Registrations)
                 .HasForeignKey(r => r.ProductID);
 
-            builder.HasData(
-               new Registration
-               {
-                   CustomerID = 1002,
-                   ProductID = 1
-               },
-               new Registration
-               {
-                   CustomerID = 1002,
-                   ProductID = 3
-               },
-               new Registration
-               {
-                   CustomerID = 1010,
-                   ProductID = 2
-               }
-
-               );
-
         }
     }
 }
