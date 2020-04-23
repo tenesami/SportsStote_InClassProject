@@ -11,11 +11,11 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class RegistrationController : Controller
     {
-        private SportsProUnit data { get; set; }
+        private ISportsProUnit data { get; set; }
         
-        public RegistrationController(SportsProContext ctx)
+        public RegistrationController(ISportsProUnit unit)
         {
-            data = new SportsProUnit(ctx);
+            data = unit;
         }
 
         public IActionResult GetCustomer()
@@ -79,7 +79,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         {
             Registration registration = new Registration
             {
-                CustomerID = customerID, 
+               CustomerID = customerID, 
                ProductID = productID
             };
             data.Registrations.Delete(registration);

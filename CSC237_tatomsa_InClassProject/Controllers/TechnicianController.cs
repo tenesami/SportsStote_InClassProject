@@ -12,11 +12,11 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class TechnicianController : Controller
     {
-        private Repository<Technician> data { get; set; }
+        private IRepository<Technician> data { get; set; }
 
-        public TechnicianController(SportsProContext ctx)
+        public TechnicianController(IRepository<Technician> rep)
         {
-            data = new Repository<Technician>(ctx);
+            data = rep;
         }
 
         [Route("techicians")]

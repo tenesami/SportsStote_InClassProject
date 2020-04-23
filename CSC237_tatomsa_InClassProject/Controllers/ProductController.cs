@@ -12,10 +12,10 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class ProductController : Controller
     {
-        private Repository<Product> data { get; set; }
-        public ProductController(SportsProContext ctx)
+        private IRepository<Product> data { get; set; }
+        public ProductController(IRepository<Product> rep)
         {
-            data = new Repository<Product>(ctx);
+            data = rep;
         }
 
         [Route("products")]

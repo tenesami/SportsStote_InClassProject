@@ -10,7 +10,7 @@ namespace CSC237_tatomsa_InClassProject.DataLayer
     {
         private SportsProContext context { get; set; }
         public SportsProUnit(SportsProContext ctx) => context = ctx;
-        
+
         private IRepository<Product> productRepo;
         public IRepository<Product> Products
         {

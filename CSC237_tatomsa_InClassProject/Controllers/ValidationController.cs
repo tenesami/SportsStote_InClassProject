@@ -12,10 +12,8 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class ValidationController : Controller
     {
-        private Repository<Customer> data { get; set; }
-        public ValidationController(SportsProContext ctx) => data = new Repository<Customer>(ctx);
-
-        public JsonResult CheckEmail(string emailAddress, int customerID)
+        
+        public JsonResult CheckEmail(string emailAddress, int customerID, [FromServices] IRepository<Customer> data)
         {
             if(customerID == 0) //Only check for new customers - don't check on edit
             {

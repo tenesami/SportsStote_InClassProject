@@ -13,11 +13,13 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class TechIncidentController : Controller            
     {
-        private SportsProUnit data { get; set; }
-        
-        public TechIncidentController(SportsProContext ctx)
+        private ISportsProUnit data { get; set; }
+        private ISession session { get; set; }
+
+        public TechIncidentController(ISportsProUnit unit, IHttpContextAccessor accessor)
         {
-            data = new SportsProUnit(ctx);
+            data = unit;
+            session = accessor.HttpContext.Session;
         }
         [HttpGet]
         public IActionResult Get() 
@@ -115,3 +117,5 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         } 
     }
 }
+
+

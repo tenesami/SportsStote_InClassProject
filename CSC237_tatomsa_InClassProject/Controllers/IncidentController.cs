@@ -14,18 +14,18 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class IncidentController : Controller
     {
-        private SportsProUnit data { get; set; }
+        private IRepository<Incident> data { get; set; }
 
-        public IncidentController(SportsProContext ctx)
+        public IncidentController(IRepository<Incident> rep)
         {
-            data = new SportsProUnit(ctx);
+            data = rep;
         }
 
         [Route("[controller]s")]
         public IActionResult List(string filter = "all")
         {
             IncidentListViewModel model = new IncidentListViewModel
-            {               
+            {
                 Filter = filter
             };
             var options = new QueryOptions<Incident>
@@ -41,45 +41,24 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             if (filter == "Open")
                 options.Where = i => i.DateClosed == null;
 
-            IEnumerable<Incident> incidents = data.Incidents.List(options);
+            IEnumerable<Incident> incidents = data.List(options);
             model.Incidents = incidents;
 
             return View(model);
         }
-        public IActionResult Filter (string id)
+        public IActionResult Filter(string id)
         {
             return RedirectToAction("List", new { Filter = id });
         }
-        //Helper method
-        private IncidentViewModel GetViewModel()
-        {
-            IncidentViewModel model = new IncidentViewModel
-            {
-                Customers = data.Customers.List(new QueryOptions<Customer>
-                {
-                OrderBy = c => c.FirstName                   
-                }),
-
-                Products = data.Products.List(new QueryOptions<Product>
-                {
-                    OrderBy = c => c.Name
-                }),
-
-                Technicians = data.Technicians.List(new QueryOptions<Technician>
-                {
-                    OrderBy = c => c.Name
-                }),
-            };
-
-            return model;
-        }
-            
+        
         [HttpGet]
         public IActionResult Add()
         {
-            IncidentViewModel model = GetViewModel();
-            model.Incident = new Incident();
-            model.Action = "Add";
+            IncidentViewModel model = new IncidentViewModel
+            {
+                Incident = new Incident(),
+                Action = "Add"
+            };
 
             return View("AddEdit", model);
         }
@@ -87,10 +66,11 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            IncidentViewModel model = GetViewModel();
-            var incident = data.Incidents.Get(id);
-            model.Incident = incident;
-            model.Action = "Edit";          
+            IncidentViewModel model = new IncidentViewModel
+            {
+                Incident = data.Get(id),
+                Action = "Edit"
+            };
 
             return View("AddEdit", model);
         }
@@ -98,14 +78,14 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var incident = data.Incidents.Get(id);
+            var incident = data.Get(id);
             return View(incident);
         }
 
         [HttpPost]
         public IActionResult Delete(Incident incident)
         {
-            data.Incidents.Delete(incident);
+            data.Delete(incident);
             data.Save();
             return RedirectToAction("List");
         }
@@ -117,20 +97,21 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             {
                 if (incident.IncidentID == 0)
                 {
-                    data.Incidents.Insert(incident);
+                    data.Insert(incident);
                 }
                 else
                 {
-                    data.Incidents.Update(incident);
+                    data.Update(incident);
                 }
                 data.Save();
                 return RedirectToAction("List");
-            }   
+            }
             else
             {
-                IncidentViewModel model = GetViewModel();
-                model.Incident = incident;
-
+                IncidentViewModel model = new IncidentViewModel
+                {
+                    Incident = incident
+                };
                 if (incident.IncidentID == 0)
                 {
                     model.Action = "Add";
@@ -146,3 +127,5 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
     }
 }
+
+

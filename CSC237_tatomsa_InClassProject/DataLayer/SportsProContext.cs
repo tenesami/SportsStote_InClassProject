@@ -32,7 +32,7 @@ namespace CSC237_tatomsa_InClassProject.Models
             modelBuilder.ApplyConfiguration(new SeedCustomers());
 
             modelBuilder.ApplyConfiguration(new SeedIncidents());
-           
+
             modelBuilder.ApplyConfiguration(new SeedRegistrations());
 
             //Many to many relationship for Registratiom table
