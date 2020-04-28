@@ -34,7 +34,7 @@ using CSC237_tatomsa_InClassProject.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aef9d767b4eee3f6ffbb1f71d29906557237418c", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b5ff2f5a23a8a2211079c56603a87b70eff5fd9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d73078a1eafffa2f56a8739d25aab33a2f09ddc", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,6 +68,7 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             }
         }
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
+        private global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -80,12 +81,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>SportsPro Technical Support</h1>\r\n<p>Sports management software for the sports enthusiast</p>\r\n\r\n<h1>Admin</h1>\r\n<div class=\"list-group\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c7071", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c7227", async() => {
                 WriteLiteral("Manage Products");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_0.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_1.Value;
@@ -99,12 +102,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c8532", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c8974", async() => {
                 WriteLiteral("Manage Technicians");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_3.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_1.Value;
@@ -118,12 +123,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c9996", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c10724", async() => {
                 WriteLiteral("Manage Customers");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_4.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_1.Value;
@@ -137,12 +144,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c11458", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c12473", async() => {
                 WriteLiteral("Manage Incidents");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_5.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_1.Value;
@@ -156,12 +165,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c12921", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c14222", async() => {
                 WriteLiteral("Manage Registrations");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_6.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_7.Value;
@@ -175,12 +186,14 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</div>\r\n\r\n<h1>Technicians</h1>\r\n<div class=\"list-group\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c14452", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aef9d767b4eee3f6ffbb1f71d29906557237418c16039", async() => {
                 WriteLiteral("Update Incident");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_8.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_8);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_9.Value;

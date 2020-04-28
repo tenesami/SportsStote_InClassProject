@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CSC237_tatomsa_InClassProject.DataLayer;
+﻿using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using Microsoft.AspNetCore.Mvc;
 

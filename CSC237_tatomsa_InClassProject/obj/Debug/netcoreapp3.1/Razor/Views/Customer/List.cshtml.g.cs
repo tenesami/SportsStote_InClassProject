@@ -34,7 +34,7 @@ using CSC237_tatomsa_InClassProject.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb56b9a60331592d58bd2295a551feb01f4524d3", @"/Views/Customer/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b5ff2f5a23a8a2211079c56603a87b70eff5fd9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d73078a1eafffa2f56a8739d25aab33a2f09ddc", @"/Views/_ViewImports.cshtml")]
     public class Views_Customer_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Customer>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -63,6 +63,7 @@ using CSC237_tatomsa_InClassProject.ViewModels;
             }
         }
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
+        private global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -137,12 +138,14 @@ Write(ViewBag.Title);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d37630", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d37786", async() => {
                 WriteLiteral("Edit");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_0.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
             if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
@@ -169,12 +172,14 @@ Write(ViewBag.Title);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d39987", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d310429", async() => {
                 WriteLiteral("Delete");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_2.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
             if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
@@ -209,12 +214,14 @@ Write(ViewBag.Title);
 #line hidden
 #nullable disable
             WriteLiteral("    </tbody>\r\n</table>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d312618", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb56b9a60331592d58bd2295a551feb01f4524d313347", async() => {
                 WriteLiteral("Add Customer");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper = CreateTagHelper<global::CSC237_tatomsa_InClassProject.TagHelpers.ActiveNavLinkTagHelper>();
+            __tagHelperExecutionContext.Add(__CSC237_tatomsa_InClassProject_TagHelpers_ActiveNavLinkTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_3.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);

@@ -34,7 +34,7 @@ using CSC237_tatomsa_InClassProject.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bda4161cfbdd27196be47f1b247e391a98ba41ce", @"/Views/Registration/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b5ff2f5a23a8a2211079c56603a87b70eff5fd9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d73078a1eafffa2f56a8739d25aab33a2f09ddc", @"/Views/_ViewImports.cshtml")]
     public class Views_Registration_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<RegistrationViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Delete", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

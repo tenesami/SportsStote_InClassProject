@@ -12,16 +12,16 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 {
     public class CustomerController : Controller
     {
-        private ISportsProUnit data { get; set; }
-        public CustomerController(ISportsProUnit unit)
+        private IRepository<Customer> data { get; set; }
+        public CustomerController(IRepository<Customer> repo)
         {
-            data = unit;
+            data = repo;
         }
 
         [Route("customers")]
         public IActionResult List()
         {
-            var customers = data.Customers.List(new QueryOptions<Customer>
+            var customers = data.List(new QueryOptions<Customer>
             {
                 OrderBy = c => c.LastName
             }); 
@@ -33,9 +33,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
-
-            ViewBag.Countries = GetCountryList();
-
+          
             return View("AddEdit", new Customer());
         }
 
@@ -43,17 +41,15 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
-
-            ViewBag.Countries = GetCountryList();
-
-            var customer = data.Customers.Get(id);
+          
+            var customer = data.Get(id);
             return View("AddEdit", customer);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var customer = data.Customers.Get(id);
+            var customer = data.Get(id);
 
             return View(customer);
         }
@@ -61,7 +57,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         [HttpPost]
         public IActionResult Delete(Customer customer)
         {
-            data.Customers.Delete(customer);
+            data.Delete(customer);
             data.Save();
             return RedirectToAction("List");
         }
@@ -76,7 +72,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
 
             if (customer.CustomerID == 0 && TempData["okEmail"] == null) //Only check new customer dosen't check on edit
             {
-                string msg = Check.EmailExists(data.Customers, customer.Email);
+                string msg = Check.EmailExists(data, customer.Email);
                 if (!string.IsNullOrEmpty(msg))
                 {
                     ModelState.AddModelError(nameof(Customer.Email), msg);
@@ -87,11 +83,11 @@ namespace CSC237_tatomsa_InClassProject.Controllers
             {
                 if (customer.CustomerID == 0)
                 {
-                    data.Customers.Insert(customer);
+                    data.Insert(customer);
                 }
                 else
                 {
-                    data.Customers.Update(customer);
+                    data.Update(customer);
                 }
                 data.Save();
                 return RedirectToAction("List");
@@ -109,13 +105,6 @@ namespace CSC237_tatomsa_InClassProject.Controllers
                 }
                 return View("AddEdit", customer);
             }
-        }
-        //Private Helper method 
-        IEnumerable<Country> GetCountryList() =>
-            data.Countries.List(new QueryOptions<Country>
-            { 
-                OrderBy = c => c.Name
-            });
-
+        }       
     }
 }

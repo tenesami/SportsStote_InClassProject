@@ -4,8 +4,7 @@
     ViewBag.Title = title;
 }
 @section scripts{
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
 }
 
 <h1>@ViewBag.Title</h1>
@@ -74,12 +73,9 @@
     <div class="row form-group">
         <label asp-for="CountryID" class="col-sm-3">Country</label>
         <div class="col-sm-6">
-            <select asp-for="CountryID"
-                    asp-items="@(new SelectList(ViewBag.Countries,
-                        "CountryID", "Name", Model.CountryID
-                    ))"
-                    class="form-control">
-                <option value="xx">Select a country...</option>
+            <select asp-for="CountryID" class="form-control">
+               <vc:Country-drop-down-options value="@Model.Country"
+                    default-value="xx" default-text="Select a country..."?/>
             </select>
         </div>
         <div class="col-sm-3">

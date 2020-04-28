@@ -19,12 +19,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
 
         public IActionResult GetCustomer()
-        {
-            ViewBag.Customers = data.Customers.List(new QueryOptions<Customer>
-            { 
-                OrderBy = c => c.LastName
-            });
-              
+        {            
             int custID = HttpContext.Session.GetInt32("custID") ?? 0;
             Customer customer;
             if (custID == 0)

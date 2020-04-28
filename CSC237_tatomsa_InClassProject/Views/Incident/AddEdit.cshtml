@@ -5,9 +5,7 @@
 }
 
 @section scripts {
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-
+    <partial name="_ValidationScriptsPartial" />
 }
 <h1>@ViewBag.Title</h1>
 
@@ -16,25 +14,17 @@
 
     <div class="form-group">
         <label asp-for="Incident.CustomerID">Customer</label>
-        <select asp-for="Incident.CustomerID"
-                asp-items="@(new SelectList(Model.Customers,
-                    "CustomerID", "FullName", Model.Incident.CustomerID
-                ))"
-                class="form-control">
-            <option value="">Select a customer...</option>
-
+        <select asp-for="Incident.CustomerID"class="form-control">
+            <vc:customer-drop-down-options value="@Model.Incident.CustomerID"
+                default-value="" default-text="Select a customer..."/>          
         </select>
     </div>
 
     <div class="form-group">
         <label asp-for="Incident.ProductID">Product</label>
-        <select asp-for="Incident.ProductID"
-                asp-items="@(new SelectList(Model.Products,
-                "ProductID", "Name", Model.Incident.ProductID
-                ))"
-                class="form-control">
-            <option value="">Select a product...</option>
-
+        <select asp-for="Incident.ProductID" class="form-control">
+            <vc:product-drop-down-options value="@Model.Incident.ProductID"
+                default-value="" default-text="Select a product..."/>
         </select>
     </div>
 
@@ -50,12 +40,9 @@
 
     <div class="form-group">
         <label asp-for="Incident.TechnicianID">Technician</label>
-        <select asp-for="Incident.TechnicianID"
-                asp-items="@(new SelectList(Model.Technicians,
-                         "TechnicianID", "Name",
-                         Model.Incident.TechnicianID.ToString()))"
-                class="form-control">
-            <option value="">Assign a technician....</option>
+        <select asp-for="Incident.TechnicianID" class="form-control">
+            <vc:technician-drop-dwn-options value="@Model.Incident.TechnicianID"
+                default-value="" default-text="Assign a technician..."/>
         </select>
     </div>
 

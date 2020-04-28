@@ -4,6 +4,10 @@
     ViewBag.Title = title;
 }
 
+@section script{
+    <partial name="_ValidationScriptsPartial" />
+ }
+    
 <h1>@ViewBag.Title</h1>
 
 <form asp-action="Save" method="post">

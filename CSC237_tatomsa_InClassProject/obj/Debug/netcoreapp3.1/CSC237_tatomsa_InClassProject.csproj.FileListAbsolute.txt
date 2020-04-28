@@ -69,7 +69,6 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Product\AddEdit.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Product\Delete.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Product\List.cshtml.g.cs
-C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Technician\AddEdit.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Technician\Delete.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Technician\List.cshtml.g.cs
@@ -82,3 +81,6 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\TechIncident\List.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Registration\GetCustomer.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Registration\List.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Common\DropDown.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CopyRight\Default.cshtml.g.cs

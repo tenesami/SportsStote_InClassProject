@@ -3,11 +3,7 @@ using CSC237_tatomsa_InClassProject.Models;
 using CSC237_tatomsa_InClassProject.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace CSC237_tatomsa_InClassProject.Controllers
 {
@@ -23,12 +19,7 @@ namespace CSC237_tatomsa_InClassProject.Controllers
         }
         [HttpGet]
         public IActionResult Get() 
-        {
-            ViewBag.Technicians = data.Technicians.List(new QueryOptions<Technician>
-            {
-                OrderBy = c => c.Name
-            });
-
+        {           
             int techID = HttpContext.Session.GetInt32("techID") ?? 0;
             Technician technician; //create empty technician
 
