@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CSC237_tatomsa_InClassProject.DataLayer;
 using CSC237_tatomsa_InClassProject.Models;
 using CSC237_tatomsa_InClassProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CSC237_tatomsa_InClassProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class IncidentController : Controller
     {
         private IRepository<Incident> data { get; set; }

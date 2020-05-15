@@ -20,7 +20,8 @@ namespace CSC237_tatomsa_InClassProject
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .UseDefaultServiceProvider(options => options.ValidateScopes = false);
                 });
     }
 }

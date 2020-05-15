@@ -17,7 +17,9 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    @RenderSection("scripts", false)
+
+    @RenderSection("Scripts", false)
+
 </head>
 <body>
     <header>
@@ -40,8 +42,8 @@
                 </div>
 
                 <div class="navbar-nav nav-bar-right">
-                    <a class="nav-item nav-link @(controller== "Home" && action == "About" ? "active" : "")"
-                       asp-controller="Home" asp-action="About">About</a>
+                    <vc:login-logout user="@User"/>
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="About">About</a>
                       
                 </div>
             </nav>

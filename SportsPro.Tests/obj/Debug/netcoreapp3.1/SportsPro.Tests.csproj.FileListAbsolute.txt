@@ -134,3 +134,8 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\obj\Debug\netcoreapp3.1\SportsPro.Tests.csproj.CoreCompileInputs.cache
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\obj\Debug\netcoreapp3.1\SportsPro.Tests.dll
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\obj\Debug\netcoreapp3.1\SportsPro.Tests.pdb
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\SportsPro.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Identity;
 
 namespace CSC237_tatomsa_InClassProject
 {
@@ -27,13 +29,25 @@ namespace CSC237_tatomsa_InClassProject
             services.AddControllersWithViews();
 
             services.AddDbContext<SportsProContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("SportsPro")));
+            options.UseSqlServer(
+                Configuration.GetConnectionString("SportsPro")));
+
+
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+            options.Password.RequiredLength = 6;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<SportsProContext>()
+            .AddDefaultTokenProviders();
+
             services.AddRouting(options =>
             {
+            
                 options.LowercaseUrls = true;
                 options.AppendTrailingSlash = true;
             });
-
+    
             services.AddTransient<ISportsProUnit, SportsProUnit>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddHttpContextAccessor();
@@ -57,6 +71,8 @@ namespace CSC237_tatomsa_InClassProject
 
             app.UseRouting();
             app.UseSession();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -65,6 +81,8 @@ namespace CSC237_tatomsa_InClassProject
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SportsProContext.CreateAdminUser(app.ApplicationServices).Wait();
         }
     }
 }

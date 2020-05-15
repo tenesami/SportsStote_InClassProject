@@ -57,8 +57,6 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\CSC237_tatomsa_InClassProject.csproj.CoreCompileInputs.cache
-C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\CSC237_tatomsa_InClassProject.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\AddEdit.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Delete.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\List.cshtml.g.cs
@@ -84,3 +82,14 @@ C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProje
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Common\DropDown.cshtml.g.cs
 C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CopyRight\Default.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\CSC237_tatomsa_InClassProject.csproj.CoreCompileInputs.cache
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\CSC237_tatomsa_InClassProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\tesfayekeno\Desktop\CSharp_II\inClass_projects\SportsStote_InClassProject\CSC237_tatomsa_InClassProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LoginLogout\Default.cshtml.g.cs
